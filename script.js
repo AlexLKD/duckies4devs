@@ -1,3 +1,5 @@
+// --------------------hide content on click-----------------------
+
 // get the buttons and the content to hide
 const btnProducts = document.querySelectorAll(".product-div > .product-subttl");
 const txtProducts = document.querySelectorAll(".product-txt");
@@ -27,10 +29,14 @@ btnProducts.forEach(function (button, index) {
     if (accordionStatus) {
         accordionStatus.forEach(function (status) {
             if (status.index === index) {
-                if (status.hidden) {
+                // if status return true for the key "hidden"
+                if (status.hidden === true) {
+                    // add hidden and closed classes to hide content and change triangle direction
                     txtProducts[index].classList.add("hidden");
                     button.classList.add("closed");
+                    // if status return false
                 } else {
+                    // remove the classes
                     txtProducts[index].classList.remove("hidden");
                     button.classList.remove("closed");
                 }
