@@ -1,25 +1,42 @@
-// --------------------Hide content on click----------------------
 // get the buttons and the content to hide
 const btnProducts = document.querySelectorAll(".product-div > .product-subttl");
 const txtProducts = document.querySelectorAll(".product-txt");
 // forEach loop to iterate for every button
-btnProducts.forEach(function (button, i) {
-    // add listener on click to hide the content
+btnProducts.forEach(function (button, index) {
     button.addEventListener("click", function () {
         // hide the text below the button
-        txtProducts[i].classList.toggle("hidden");
+        txtProducts[index].classList.toggle("hidden");
         // add 'closed' class to change the triangle direction
         button.classList.toggle("closed");
-        const accordionStatus = {
-            index: i,
-            hidden: txtProducts[i].classList.contains("hidden"),
-        };
+        // create array to save accordion in local storage
+        const accordionStatus = [];
+        txtProducts.forEach(function (txtProduct, i) {
+            // push in the array if the button have the "hidden" class
+            accordionStatus.push({
+                index: i,
+                hidden: txtProduct.classList.contains("hidden"),
+            });
+        });
         localStorage.setItem(
             "accordionStatus",
             JSON.stringify(accordionStatus)
         );
-        console.log(accordionStatus);
     });
+    // ask accordion status to local storage
+    const accordionStatus = JSON.parse(localStorage.getItem("accordionStatus"));
+    if (accordionStatus) {
+        accordionStatus.forEach(function (status) {
+            if (status.index === index) {
+                if (status.hidden) {
+                    txtProducts[index].classList.add("hidden");
+                    button.classList.add("closed");
+                } else {
+                    txtProducts[index].classList.remove("hidden");
+                    button.classList.remove("closed");
+                }
+            }
+        });
+    }
 });
 // -----------------Carrousel + change img on hover----------------
 // get the main img and the thumbnail imgs
