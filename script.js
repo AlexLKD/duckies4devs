@@ -17,7 +17,7 @@ const mainImg = document.querySelector(".pictures-img");
 const thumbs = document.querySelectorAll(".thumbs-img");
 // Change img on click
 thumbs.forEach((thumb, index) => {
-    thumb.addEventListener("click", function () {
+    thumb.addEventListener("mouseover", function () {
         // Update src
         mainImg.src = this.src.replace("s.png", "l.png");
     });
