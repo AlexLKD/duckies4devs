@@ -1,13 +1,18 @@
 // --------------------Hide content on click----------------------
 // get the buttons and the content to hide
-const contentProduct = document.querySelector(".product-acrd-lnk");
-const txtProduct = document.querySelector(".product-txt");
+const btnAdv = document.querySelector(".btn-advantages");
+const btnCar = document.querySelector(".btn-car");
+const advantages = document.querySelector(".product-advantages");
+const car = document.querySelector(".product-car");
 // add listener on click to hide the content
-contentProduct.addEventListener("click", function (e) {
-    txtProduct.classList.toggle("hidden");
-    contentProduct.classList.toggle("closed");
+btnAdv.addEventListener("click", function () {
+    advantages.classList.toggle("hidden");
+    btnAdv.classList.toggle("closed");
 });
-console.log(contentProduct);
+btnCar.addEventListener("click", function () {
+    car.classList.toggle("hidden");
+    btnCar.classList.toggle("closed");
+});
 
 // -----------------Carrousel + change img on hover----------------
 // get the main img and the thumbnail imgs
