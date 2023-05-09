@@ -1,19 +1,17 @@
 // --------------------Hide content on click----------------------
 // get the buttons and the content to hide
-const btnAdv = document.querySelector(".btn-adv");
-const btnCar = document.querySelector(".btn-car");
-const adv = document.querySelector(".product-advantages");
-const car = document.querySelector(".product-car");
-// add listener on click to hide the content
-btnAdv.addEventListener("click", function () {
-    adv.classList.toggle("hidden");
-    btnAdv.classList.toggle("closed");
+const btnProducts = document.querySelectorAll(".product-div > .product-subttl");
+const txtProducts = document.querySelectorAll(".product-txt");
+// forEach loop to iterate for every button
+btnProducts.forEach(function (button, i) {
+    // add listener on click to hide the content
+    button.addEventListener("click", function () {
+        // hide the text below the button
+        txtProducts[i].classList.toggle("hidden");
+        // add 'closed' class to change the triangle direction
+        button.classList.toggle("closed");
+    });
 });
-btnCar.addEventListener("click", function () {
-    car.classList.toggle("hidden");
-    btnCar.classList.toggle("closed");
-});
-
 // -----------------Carrousel + change img on hover----------------
 // get the main img and the thumbnail imgs
 const mainImg = document.querySelector(".pictures-img");
