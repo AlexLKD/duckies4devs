@@ -104,6 +104,8 @@ btnCart.addEventListener("click", () => {
 });
 console.log(qtyCart);
 
+// ------------------------------carrousel--------------------------
+
 // let PrevBtn = document.createElement("button");
 // btn.innerHTML = "◀️";
 // let nextBtn = document.createElement("button");
