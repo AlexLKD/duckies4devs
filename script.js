@@ -68,6 +68,9 @@ btnCart.addEventListener("click", () => {
     btnCart.disabled = true;
     // number of ducks becomes number of articles inside the cart
     cartNb.textContent = qtyCart;
+    if (qtyCart > 99) {
+        cartNb.textContent = "99+";
+    }
 });
 console.log(qtyCart);
 
