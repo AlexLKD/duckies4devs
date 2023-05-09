@@ -10,6 +10,15 @@ btnProducts.forEach(function (button, i) {
         txtProducts[i].classList.toggle("hidden");
         // add 'closed' class to change the triangle direction
         button.classList.toggle("closed");
+        const accordionStatus = {
+            index: i,
+            hidden: txtProducts[i].classList.contains("hidden"),
+        };
+        localStorage.setItem(
+            "accordionStatus",
+            JSON.stringify(accordionStatus)
+        );
+        console.log(accordionStatus);
     });
 });
 // -----------------Carrousel + change img on hover----------------
