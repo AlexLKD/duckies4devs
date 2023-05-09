@@ -53,6 +53,24 @@ prevPic.addEventListener("click", function () {
     mainImg.src = thumbs[currentImg].src.replace("s.png", "l.png");
 });
 
+// -----------------------add to cart------------------------------
+
+// get button and input
+const btnCart = document.querySelector(".add-cta");
+const qtyCart = document.querySelector(".add-qty").value;
+// get number of ducks in the cart
+const cartNb = document.querySelector(".cart-nb");
+
+btnCart.addEventListener("click", () => {
+    // change button's innerhtml
+    btnCart.innerHTML = "Déjà au panier";
+    // disable button "add to cart"
+    btnCart.disabled = true;
+    // number of ducks becomes number of articles inside the cart
+    cartNb.textContent = qtyCart;
+});
+console.log(qtyCart);
+
 // let PrevBtn = document.createElement("button");
 // btn.innerHTML = "◀️";
 // let nextBtn = document.createElement("button");
