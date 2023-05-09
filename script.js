@@ -1,12 +1,12 @@
 // --------------------Hide content on click----------------------
 // get the buttons and the content to hide
-const btnAdv = document.querySelector(".btn-advantages");
+const btnAdv = document.querySelector(".btn-adv");
 const btnCar = document.querySelector(".btn-car");
-const advantages = document.querySelector(".product-advantages");
+const adv = document.querySelector(".product-advantages");
 const car = document.querySelector(".product-car");
 // add listener on click to hide the content
 btnAdv.addEventListener("click", function () {
-    advantages.classList.toggle("hidden");
+    adv.classList.toggle("hidden");
     btnAdv.classList.toggle("closed");
 });
 btnCar.addEventListener("click", function () {
@@ -52,3 +52,8 @@ prevPic.addEventListener("click", function () {
     // change img src to get the bigger one
     mainImg.src = thumbs[currentImg].src.replace("s.png", "l.png");
 });
+
+// let PrevBtn = document.createElement("button");
+// btn.innerHTML = "◀️";
+// let nextBtn = document.createElement("button");
+// btn.innerHTML = "▶️";
