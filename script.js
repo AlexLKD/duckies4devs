@@ -10,6 +10,8 @@ contentProduct.addEventListener("click", function (e) {
 });
 console.log(txtProduct);
 
+// -----------------Carrousel + change img on click----------------
+
 // get the main img and the thumbnail imgs
 const mainImg = document.querySelector(".pictures-img");
 const thumbs = document.querySelectorAll(".thumbs-img");
@@ -20,7 +22,6 @@ thumbs.forEach((thumb, index) => {
         mainImg.src = this.src.replace("s.png", "l.png");
     });
 });
-
 // get previous and next buttons
 const prevPic = document.querySelector(".pictures-prev");
 const nextPic = document.querySelector(".pictures-next");
