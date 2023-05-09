@@ -1,21 +1,19 @@
 // --------------------Hide content on click----------------------
-
 // get the buttons and the content to hide
 const contentProduct = document.querySelector(".product-acrd-lnk");
 const txtProduct = document.querySelector(".product-txt");
 // add listener on click to hide the content
 contentProduct.addEventListener("click", function (e) {
     txtProduct.classList.toggle("hidden");
-    // contentProduct.classList.toggle("product-acrd-lnk.closed::after");
+    contentProduct.classList.toggle("closed");
 });
-console.log(txtProduct);
+console.log(contentProduct);
 
-// -----------------Carrousel + change img on click----------------
-
+// -----------------Carrousel + change img on hover----------------
 // get the main img and the thumbnail imgs
 const mainImg = document.querySelector(".pictures-img");
 const thumbs = document.querySelectorAll(".thumbs-img");
-// Change img on click
+// Change img on hover
 thumbs.forEach((thumb, index) => {
     thumb.addEventListener("mouseover", function () {
         // Update src
